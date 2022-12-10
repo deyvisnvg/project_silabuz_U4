@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block title %} {% load static %}
+<link href="{% static 'css/registro.css' %}" rel="stylesheet" />
+{% endblock %} {% block content %}
+<input type="hidden" name="modulo" id="moduloUser" value="{{user.modulo}}" />
+<section class="registro-data">
+  <div class="state">
+    <a href="{% url 'portafolio' %}"
+      ><i
+        class="icon-arrow-left2"
+        id="return"
+        data-title="Regresar"
+        tooltip-dir="left"
+      ></i></a
+    >REGISTRO DE PORTAFOLIO - PROYECTO
+  </div>
+  <div class="data">
+    <form action="" method="post" method="post">
+      <div class="data-valor1">
+        <p class="description">Foto URL:</p>
+        <p><input type="text" name="foto" value="" required /></p>
+      </div>
+      <div class="data-valor1">
+        <p class="description">Titulo:</p>
+        <p>
+          <input type="text" name="titulo_project" value="" required />
+        </p>
+      </div>
+      <div class="data-valor1">
+        <p class="description">Descripción:</p>
+        <p>
+          <textarea name="descripcion" id="" cols="21" rows="14"></textarea>
+        </p>
+      </div>
+      <div class="data-valor1">
+        <p class="description">Tags:</p>
+        <p>
+          <input type="text" name="tags" value="" required />
+        </p>
+      </div>
+      <div class="data-valor1">
+        <p class="description">URL Github:</p>
+        <p>
+          <input type="url" name="url_github" value="" required />
+        </p>
+      </div>
+
+      <div class="data-boton">
+        <p class="boton"><button type="submit">Registrar</button></p>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

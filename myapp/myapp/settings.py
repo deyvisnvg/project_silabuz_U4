@@ -132,3 +132,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Redireccionando despues del login
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'portafolio'
+LOGOUT_REDIRECT_URL = 'index'

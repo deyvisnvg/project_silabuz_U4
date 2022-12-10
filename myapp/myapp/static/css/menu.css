@@ -47,53 +47,50 @@ body {
 .header ol li {
     list-style: none;
     height: inherit;
-   z-index: 1;
+    z-index: 1000;
+    margin-right: 20px;
+    width: 100%;
 }
 
-.header a {
-    /* height: inherit; */
+.menu ol a {
+    height: inherit;
     text-decoration: none;
-    /* padding: 0 12px; */
     color: white;
     display: flex;
     align-items: center;
-    border: 1px solid transparent;
-    margin: 4.5px 2px;
-    padding: 10px;
-    height: initial;
+    outline: transparent;
+    margin: 0;
+    padding: 0 10px;
 }
 
-.header a:hover {
+.menu ol a:hover {
     background-color: #20bf6b;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
-.header ol .sub-menu {
+.menu ol .sub-menu {
     background: #454648;
-    border-radius: 6px;
-    color: white;
+    border-radius: 20px;
     display: none;
     width: 154px;
-    height: auto;
-    margin-top: 0.5px;
     position: absolute;
+    margin-top: 0.5px;
 }
 
-.menu ol li:hover .sub-menu {
+.menu ol .link:hover .sub-menu {
     display: block;
 }
 
-.header .sub-menu a {
+/* .menu .sub-menu a {
     margin: 0;
-    padding: 8px 20px;
-    justify-content: initial;
-}
+    padding: 0 20px;
+} */
 
 .sub-icon {
     padding-left: 5px;
 }
 
-.container {
+.container2 {
     max-width: 1000px;
     flex: 1;
     height: inherit;
@@ -116,30 +113,16 @@ body {
     left: 10px;
 }
 
-.header .link-buttom:hover{
+.header .link-buttom:hover {
     background-color: #b33939;
 }
 
-.project_menu {
-    background-color: #f0f0f0;
-}
-
-.menu ol #output {
-    margin: 0;
-    padding: 0;
-    height: inherit;
-    display: flex;
-    width: 100%;
-}
 
 /* Desktop First que empieze desde el MQ mas grande */
+/* 
+@media screen and (max-width: 1024px) {}
 
-@media screen and (max-width: 1024px){
-
-    
-}
-
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
 
     .header {
         display: block;
@@ -183,7 +166,6 @@ body {
         justify-content: center;
         align-items: center;
         font-family: 'Bai Jamjuree', sans-serif;
-        /* font-weight: bold; */
         font-size: 18px;
     }
 
@@ -206,30 +188,31 @@ body {
     .header .sub-menu a {
         color: #2b6b17;
     }
+
     .header .sub-menu a:hover {
         background: #efd3a0;
     }
 }
 
-@media screen and (max-width: 480px){
-    .header{
+@media screen and (max-width: 480px) {
+    .header {
         width: auto;
     }
-    
+
 }
 
-@media screen and (max-width: 351px){
-    .header{
+@media screen and (max-width: 351px) {
+    .header {
         width: 352px;
     }
 }
 
-@media screen and (max-width: 320px){
-    .header{
+@media screen and (max-width: 320px) {
+    .header {
         width: 352px;
     }
 
     .project_menu {
         width: 352px;
     }
-}
+} */

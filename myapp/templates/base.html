@@ -9,32 +9,29 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}" />
     <link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
     <link rel="stylesheet" href="{% static 'css/menu.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% block title %} {% endblock %}
   </head>
 
   <body>
     <div class="hola">
       <i class="icon-menu burger-button" id="icon-burger"></i>
       <header class="header">
-        <div class="container">
+        <div class="container2">
           <div class="school"><i class="icon-books"></i>Silabuz</div>
           <nav class="menu">
             <ol>
-              {% if user.first_name %}
+              {% if user.is_authenticated %}
               <li class="link">
                 <a href="#">Registrar<i class="icon-down sub-icon"></i></a>
                 <ol class="sub-menu">
-                  <li><a href="">Portafolio</a></li>
+                  <li><a href="{% url 'portafolio_add' %}">Portafolio</a></li>
                 </ol>
               </li>
-              <li class="link">
-                <a class="link-buttom" href="">Cerrar Sesión</a>
-              </li>
               {% else %}
-              <li class="link">
+              <li>
                 <a href="">Portafolios</a>
               </li>
-              <li class="link">
+              <li>
                 <a class="link-buttom" href="{% url 'accounts/login' %}"
                   >Login</a
                 >
@@ -45,6 +42,8 @@
         </div>
       </header>
     </div>
-    <div class="container">{% block content %} {% endblock %}</div>
+    <div class="container2">{% block content %} {% endblock %}</div>
+
+    {% block footer_js %} {% endblock %}
   </body>
 </html>

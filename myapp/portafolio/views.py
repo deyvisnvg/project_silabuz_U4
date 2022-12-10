@@ -4,9 +4,18 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
-class PortafolioView(LoginRequiredMixin, View):
+class Index(View):
+    template_name = 'index.html'
+
     def get(self, request):
-        return HttpResponse("Bienvenido")
+        return render(request, self.template_name)
+
+
+class PortafolioView(LoginRequiredMixin, View):
+    template_name = 'portafolio.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
 
     # model = Book
     # template_name = 'list_libros.html'
@@ -48,3 +57,10 @@ class PortafolioView(LoginRequiredMixin, View):
 
     #     messages.success(request, 'Felicidades, se cargaron los datos a DB.')
     #     return redirect('/library/')
+
+
+class PortafolioAdd(View):
+    template_name = 'portafolio_add.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
