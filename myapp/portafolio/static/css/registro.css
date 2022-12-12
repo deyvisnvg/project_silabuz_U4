@@ -264,6 +264,14 @@ align-items: center; */
     width: 26px;
 }
 
+.messages {
+    padding: 10px 20px;
+    background: rgb(133 133 133);
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+}
+
 
 /* ====================================
 Estilos de Lista de Dispositivos

@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %} {% load static %}
+<link
+  href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+{% endblock %} {% block content %}
+<div class="mt-5">
+  <div class="card content-register">
+    <div class="card-body">
+      <h3>Registrar Usuario</h3>
+      <form method="post" novalidate>
+        {% csrf_token %} {{ form.as_p }}
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Crear Usuario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  const inputs = document.querySelectorAll("input");
+
+  inputs.forEach((input) => input.classList.add("form-control"));
+</script>
+{% endblock %}

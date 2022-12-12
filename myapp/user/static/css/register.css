@@ -1,0 +1,20 @@
+body {
+    background: #f6f6f6;
+}
+
+.content-register {
+    width: 52%;
+    margin: auto;
+    padding: 10px 35px 0;
+    border: transparent;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.card-body h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgb(0, 40, 114);
+    border-radius: 10px;
+    padding-bottom: 7px;
+}

@@ -1,23 +1,26 @@
-{% extends 'base.html' %} {% block title %} {% load static %}
-<link href="{% static 'css/registro.css' %}" rel="stylesheet" />
-{% endblock %} {% block content %}
-<input type="hidden" name="modulo" id="moduloUser" value="{{user.modulo}}" />
+{% extends 'base.html' %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+<link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
+<link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+<link rel="stylesheet" href="{% static 'css/registro.css' %}" />
+{% endblock %}
+
+{% block content %}
+<input type="hidden" name="modulo" id="moduloUser" value="{{ user.modulo }}" />
 <section class="registro-data">
   <div class="state">
-    <a href="{% url 'portafolio' %}"
-      ><i
-        class="icon-arrow-left2"
-        id="return"
-        data-title="Regresar"
-        tooltip-dir="left"
-      ></i></a
-    >REGISTRO DE PORTAFOLIO - PROYECTO
+    <a href="{% url 'portafolio' %}">
+      <i class="icon-arrow-left2" id="return" data-title="Regresar" tooltip-dir="left"></i> </a>REGISTAR PROYECTO
   </div>
   <div class="data">
-    <form action="" method="post" method="post">
+    <form action="" method="post">
+      {% csrf_token %}
       <div class="data-valor1">
         <p class="description">Foto URL:</p>
-        <p><input type="text" name="foto" value="" required /></p>
+        <p><input type="url" name="foto" value="" required /></p>
       </div>
       <div class="data-valor1">
         <p class="description">Titulo:</p>
@@ -28,7 +31,7 @@
       <div class="data-valor1">
         <p class="description">Descripción:</p>
         <p>
-          <textarea name="descripcion" id="" cols="21" rows="14"></textarea>
+          <textarea name="description" id="" cols="21" rows="14"></textarea>
         </p>
       </div>
       <div class="data-valor1">
@@ -45,9 +48,21 @@
       </div>
 
       <div class="data-boton">
-        <p class="boton"><button type="submit">Registrar</button></p>
+        <p class="boton">
+          <button type="submit">Registrar</button>
+        </p>
       </div>
     </form>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %} {% if message.tags %}
+      <span class="message-{{ message.tags }}">{{ message }}</span>
+      {% endif %} {% endfor %}
+    </ul>
+    {% endif %}
   </div>
 </section>
+{% endblock %}
+
+{% block footer %}
 {% endblock %}

@@ -1,4 +1,81 @@
 {% extends 'base.html' %}
-{% block content %} 
-<div>Bienvenido index amiguitos</div
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
+<link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+
+<link href="{% static 'assets/img/favicon.png' %}" rel="icon" />
+<link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+<!-- Google Fonts -->
+<link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
+
+<!-- Vendor CSS Files -->
+<link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+
+<!-- Template Main CSS File -->
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-show">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Portfolio</h2>
+            <p>Proyectos</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="portfolio-flters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-app">App</li>
+                    <li data-filter=".filter-card">Card</li>
+                    <li data-filter=".filter-web">Web</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row portfolio-container">
+            {% for object in object_list %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                    <img src="https://media.istockphoto.com/id/1218095777/es/foto/gr%C3%BAa-torre-con-palabra-proyecto-palabra-espa%C3%B1ola-fondo-de-pizarra-renderizado-3d.jpg?s=612x612&w=is&k=20&c=gNPaogXyMakPxCS1_7gO1YKgsoGQAbVnON7WQZ6oQf8="
+                        class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>{{ object.first_name|capfirst }}</h4>
+                        <p>{{ object.email }}</p>
+                        <div class="portfolio-links">
+                            <a href="{% url 'portafolio_details' object.id %}" title="Ver Portafolio">
+                                <i class="bx bi-easel2-fill"></i>
+                            </a>
+                            <!-- <a href="" title="GitHub">
+                                <i class="bx bx-link"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+<!-- End Portfolio Section -->
+
+<div class="credits">
+    Designed with ❤ by
+    <a href="https://bootstrapmade.com/">Deyvisnvg</a>
+</div>
 {% endblock %}
