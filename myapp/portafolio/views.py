@@ -1,10 +1,12 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.views import View
-from django.views.generic.list import ListView
+# from django.views.generic.list import ListView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from ipware import get_client_ip
+# import datetime
 
-from .models import Portafolio
+from .models import Portafolio, Ipvisits
 from django.contrib.auth.models import User
 
 
@@ -16,6 +18,12 @@ class Index(View):
     def get(self, request):
         object_list = User.objects.all()
         self.context['object_list'] = object_list
+
+        ip, is_routable = get_client_ip(request)
+        # date_now = datetime.datetime.now()
+
+        visita = Ipvisits(ip=ip)
+        visita.save()
 
         return render(request, self.template_name, self.context)
 

@@ -14,3 +14,11 @@ class Portafolio(models.Model):
 
     class Meta:
         db_table = 'portafolio'
+
+
+class Ipvisits(models.Model):
+    ip = models.CharField(max_length=20)
+    fecha_visita = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'ipVisits'
