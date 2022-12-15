@@ -19,3 +19,7 @@ Creación de portafolio.
 - Guardar la IP de las personas que visitan el sitio.
 
 Dato: En caso no haya hecho despliegue con railway (que es opcional) puede usar ngrok o Cloudflare Tunnel para guardar las IPs de las visitas.
+
+## Proyecto Actualizado Desplegado en Railway.app
+
+GitHub: [Portafolio](https://github.com/deyvisnvg/portafolio_su4)
